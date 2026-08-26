@@ -116,7 +116,7 @@ public class DiagnosticoController {
     // ➕ ROTA PARA SALVAR UM NOVO VEÍCULO E SERVIÇO (POST) - CORRIGIDA 🚀
     // ==========================================================================
     @CrossOrigin(origins = "*")
-    @PostMapping("/api/servicos/novo")
+    @PostMapping("/novo")
     public ResponseEntity<?> cadastrarNovoServico(@RequestBody java.util.Map<String, Object> payload) {
         try {
             String placa = ((String) payload.get("placa")).trim().toUpperCase();

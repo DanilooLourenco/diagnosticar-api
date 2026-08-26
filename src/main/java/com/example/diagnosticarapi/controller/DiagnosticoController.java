@@ -204,7 +204,7 @@ public class DiagnosticoController {
     // 🚗 ROTA RÁPIDA: VERIFICA SE O VEÍCULO JÁ EXISTE ANTES DE CADASTRAR (GET)
     // ==========================================================================
     @CrossOrigin(origins = "*")
-    @GetMapping("/api/servicos/veiculo/{placa}")
+    @GetMapping("/veiculo/{placa}")
     public ResponseEntity<?> buscarVeiculoPorPlaca(@PathVariable String placa) {
         try {
             String placaBusca = placa.trim().toUpperCase();
@@ -224,7 +224,7 @@ public class DiagnosticoController {
     // 🔍 ROTA PARA BUSCAR O HISTÓRICO COMPLETO DO CARRO PELA PLACA (GET)
     // ==========================================================================
     @CrossOrigin(origins = "*")
-    @GetMapping("/api/servicos/cliente/{placa}")
+    @GetMapping("/cliente/{placa}")
     public ResponseEntity<?> buscarHistoricoCliente(@PathVariable String placa) {
         try {
             String placaBusca = placa.trim().toUpperCase();
@@ -253,7 +253,7 @@ public class DiagnosticoController {
 // 📊 ROTA PARA BALANÇO FINANCEIRO POR OFICINA (GET)
 // ==========================================================================
     @CrossOrigin(origins = "*")
-    @GetMapping("/api/servicos/balanco/{usuarioId}")
+    @GetMapping("/balanco/{usuarioId}")
     public ResponseEntity<?> obterBalancoFinanceiro(@PathVariable Long usuarioId) {
         try {
             List<ServicoRealizado> servicos = servicoRealizadoRepository.findByUsuarioId(usuarioId);
